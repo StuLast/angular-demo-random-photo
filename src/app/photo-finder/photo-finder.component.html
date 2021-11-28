@@ -1,7 +1,9 @@
 <div class="ui container">
   <div class="ui center aligned container">
     <button class="ui button" (click)='onClick()'>Get A Photo</button>
-    <img [src]="" [alt]=""/>
+    <div *ngIf="image">
+      <a [href]="image.links" target="_blank"> <img [src]="image.urls" [alt]="image.description"/></a>
+    </div>
   </div>
 </div>
 
