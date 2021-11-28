@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+
+export interface IPhoto {
+  urls: {
+    small: string,
+  },
+  links: {
+    html: string
+  }
+  description: string
+}
 
 @Component({
   selector: 'app-photo-finder',
@@ -6,6 +16,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photo-finder.component.css']
 })
 export class PhotoFinderComponent implements OnInit {
+  @Input() image: IPhoto | null = null;
+  @Output() onGetPhoto = new EventEmitter();
 
   constructor() { }
 
@@ -13,7 +25,7 @@ export class PhotoFinderComponent implements OnInit {
   }
 
   onClick = () => {
-    console.log("Button Clicked");
+    this.onGetPhoto.emit();
   }
 
 }
