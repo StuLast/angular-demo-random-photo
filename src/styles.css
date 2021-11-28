@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'semantic-ui-css/semantic.min.css/';
+
+.subdued {
+  filter: brightness(30%);
+  font-weight: normal;
+}
+
+.small {
+  font-size: 0.7em;
+}
